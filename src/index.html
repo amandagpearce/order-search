@@ -3,10 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>webpack starterkit</title>
+  <title>Consulta Encomendas</title>
 </head>
 <body>
-  <h1>webpack starter</h1>
-  <p>✨ A lightweight foundation for your next webpack based frontend project.</p>
+  <div class="container">
+    <header>
+      <img class="logo" src="../public/logo.png" alt="Consulta Encomendas"/>
+    </header>
+    <section class="tracking-view">
+      <div class="search">
+        <form>
+          <h1>Consulte sua encomenda</h1>
+          <input type="text" 
+          id="search"
+          placeholder="Digite o número do pedido"  
+          required />
+          
+         <button type="submit" id="button">Procurar</button>
+        </form>
+      </div>
+      
+      <div class="search-results hidden">
+            <div class="order-client">
+              <h2>
+                <span class="number"></span>
+                <span class="name"></span>
+              </h2>
+              <h4>Número de ordem e nome do Cliente</h4>
+            </div>
+            <div class="order-value">
+              <h2></h2>
+              <h4>Valor do pedido</h4>
+            </div>
+            <div class="order-date">
+              <h2></h2>
+              <h4>Data do pedido</h4>
+            </div>
+            <div class="order-status">
+              <h2></h2>
+              <h4>Situação da encomenda</h4>
+            </div>
+      </div>
+      
+    </section>
+    <div class="error-output"></div>
+    
+  </div>
 </body>
 </html>

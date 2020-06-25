@@ -19,7 +19,8 @@ module.exports = merge(common, {
     new Webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
       filename: 'bundle.css'
-    })
+    }),
+    new FaviconsWebpackPlugin('public/favicon.ico') 
   ],
   module: {
     rules: [
@@ -35,7 +36,7 @@ module.exports = merge(common, {
           'css-loader',
           'sass-loader'
         ]
-      }
+      },
     ]
   }
 });

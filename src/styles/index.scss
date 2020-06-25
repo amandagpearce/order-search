@@ -1,6 +1,166 @@
-$body-color: slateblue;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,400;1,600;1,900&display=swap');
+
+$primary-blue:#006699;
+$secondary-blue:#007dbf;
+$tertiary-blue:#0099cc;
+$primary-green: #99cc33;
+$secondary-green:#a5ec19;
+$grey:#3d3e3c;
+$red:#ff0000;
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
 
 body {
-  color: $body-color;
-  font-family: sans-serif;
+  font-family: "Source Sans Pro";
+  .hidden{
+    display:none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.8s all;
+  }
+  .container{
+    max-width: 910px;
+    width:100%;
+    margin:0 auto;
+    display:block;
+  }
+}
+header{
+  margin-bottom: 74px;
+  margin-top: 78px;
+  .logo{
+    margin:0 auto;
+    display:block;
+    max-width: 100%;
+  }
+}
+.tracking-view {
+  form {
+    margin: 0 auto;
+    max-width: 445px;
+    position:relative;
+    margin-bottom: 105px;
+    h1 {
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -0.5px;
+      color:$secondary-blue;
+      text-align:center;
+      margin-bottom: 25px;
+      font-size:27px;
+    }
+    input[type="text"]{
+      box-shadow: none;
+      background-color: transparent;
+      border: 3px solid $primary-green;
+      padding: 0;
+      letter-spacing: 0.3px;
+      font-size: 26px;
+      font-style: italic;
+      width: 100%;
+      max-width: 445px;
+      text-align: center;
+      height: 46px;
+      border-radius: 33px;
+      transition:all 0.3s ease;
+      color:$grey;
+      &:focus{
+        outline:none;
+        border-color:$secondary-green;
+      }
+      @include placeholder {
+        color: #b8b4b4;
+      }
+    }
+    button {
+      border: none;
+      text-indent: -9999em;
+      text-transform: uppercase;
+      right: 18px;
+      bottom: 11px;
+      width: 27px;
+      height: 27px;
+      position: absolute;
+      background: transparent url(../../public/lupa.png);
+      &:focus{
+        outline:none;
+      }
+      &:hover{
+        cursor:pointer;
+      }
+    }
+  }
+  .search-results {
+        h2{
+          color:$primary-blue;
+          font-size:33px; 
+          font-weight: 400;
+          margin: 0;
+          text-align: center;
+        }
+        h4{
+          color:$tertiary-blue;
+          text-align: center;
+          font-size:19px;
+          font-style: italic;
+          font-weight: 600;
+          margin: 2px 0 0 0;
+        }
+  }
+}
+.error-output{
+  h2{
+    color:$red;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.55em;
+    &:first-of-type{
+      margin-bottom: 50px;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .search-results {
+        > div{
+            width: 50%;
+            float: left;
+            height: 110px;
+        }
+      }
+}
+@media (max-width: 767px) {
+  .tracking-view{
+    padding:0 25px;
+    h1{
+      font-size:22px;
+    }
+    form {
+      margin-bottom: 65px;
+      input[type="text"]{
+        font-size: 19px;
+        height: 35px;
+      }
+      button{
+        right: 3px;
+        bottom: 6px;
+      }
+    }
+  }
+  .search-results{
+    > div{
+      margin-bottom: 40px;
+      &.order-value {
+        display: none;
+      }
+    }
+  }
 }
