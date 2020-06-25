@@ -163,4 +163,12 @@ header{
       }
     }
   }
+  .error-output{
+    h2{
+      font-size: 24px;
+      &:first-of-type {
+        margin-bottom: 38px;
+      }
+    }
+  }
 }
