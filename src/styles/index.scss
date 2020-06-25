@@ -138,13 +138,17 @@ header{
       }
 }
 @media (max-width: 767px) {
+  header{
+    margin-top: 30px;
+    margin-bottom: 65px;
+  }
   .tracking-view{
     padding:0 25px;
-    h1{
-      font-size:22px;
-    }
     form {
-      margin-bottom: 65px;
+      margin-bottom: 53px;
+      h1{
+        font-size:22px;
+      }
       input[type="text"]{
         font-size: 19px;
         height: 35px;
@@ -154,15 +158,22 @@ header{
         bottom: 6px;
       }
     }
-  }
-  .search-results{
-    > div{
-      margin-bottom: 40px;
-      &.order-value {
-        display: none;
+    .search-results{
+      > div{
+        margin-bottom: 26px;
+        &.order-value {
+          display: none;
+        }
+        h2{
+          font-size: 24px;
+        }
+        h4{
+          font-size:14px;
+        }
       }
     }
   }
+
   .error-output{
     h2{
       font-size: 24px;
