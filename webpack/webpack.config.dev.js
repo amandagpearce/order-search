@@ -2,7 +2,7 @@ const Path = require('path');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+//const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -18,7 +18,7 @@ module.exports = merge(common, {
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new FaviconsWebpackPlugin('public/favicon.ico') 
+    //new FaviconsWebpackPlugin('public/favicon.ico') 
   ],
   module: {
     rules: [
